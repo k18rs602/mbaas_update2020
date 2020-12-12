@@ -47,7 +47,8 @@
       })
     }
     function deleteData() {
-      UTdata.fetch().then(function(uTdata){
+      UTdata.fetch()
+      .then(function(uTdata){
         return uTdata.delete();
       })
       .then(function(results){
@@ -62,7 +63,8 @@
       })
     }
     function updateData() {
-      UTdata.fetch().then(function(uTdata){
+      UTdata.fetch()
+      .then(function(uTdata){
         let value = parseInt($("#update").val());
         uTdata.set(key, value);
         return uTdata.update();
@@ -73,12 +75,23 @@
         $("#display").html("update success");
       })
       .catch(function(error){
-         $("#display").removeClass();
+        $("#display").removeClass();
         $("#display").addClass("bg-warning");
         $("#display").html("update fail:" +JSON.stringify(error));
       })
     }
     function countData() {
+      UTdata.count().fetchAll()
+      .then(function(results){
+         $("#display").removeClass();
+         $("#display").addClass("bg-success");
+         $("#display").html(results.count);
+      })
+      .catch(function(error){
+        $("#display").removeClass();
+        $("#display").addClass("bg-warning");
+        $("#display").html("count fail:" + JSON.stringify(error));
+      })
     }
     function sortData() {
     }
@@ -93,7 +106,7 @@
   <div>
     <a onclick="fetchAll()" class="btn btn-outline-secondary" role="buton">Fetch All</a>
     <a onclick="deleteData()" class="btn btn-outline-secondary" role="buton">Delete</a>
-    <a onclick="countData()" class="btn btn-outline-primary" role="button">Count</a>
+    <a onclick="countData()" class="btn btn-outline-secondary" role="button">Count</a>
     <a onclick="sortData()" class="btn btn-outline-primary" role="button">Sort</a>
   </div>
   <div>
