@@ -14,7 +14,7 @@
     let key = "score";
     function enterData() {
       let uTdata = new UTdata();
-      let value = parseInt($("#data").val());
+      let value = ($("#data").val());
       uTdata.set(key, value)
       .save()
       .then(function(results){
@@ -135,9 +135,10 @@
 <body>
   <h1 class="text-light bg-secondary">mbaas update</h1>
   <div>
-    <input type="radio" name="gakunen" value="文字">文字
-    <input type="radio" name="gakunen" value="数字">数字
+    <input type="checkbox" name="c8" value="文字" onchange="chk1(this.value)">文字
+    <input type="checkbox" name="c8" value="数字" onchange="chk1(this.value)">数字
   </div>
+  <p><span id="span8"></span>を選択</p>
   <div>
     <input type="text" id="data" placeholder="数字"> 
     <a onclick="enterData()" class="btn btn-outline-secondary" role="button">Enter</a>
