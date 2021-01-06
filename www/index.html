@@ -13,6 +13,7 @@
     let UTdata = ncmb.DataStore("UpdateTest");
     let key = "mozi";
     let key2 = "number";
+    let key3 = "ch";
     function enterDataMoji() {
       let uTdata = new UTdata();
       let value = ($("#data").val());
@@ -33,6 +34,22 @@
       let uTdata = new UTdata();
       let value = ($("#data").val());
       uTdata.set(key2, value).set(key,"")
+      .save()
+      .then(function(results){
+        $("#display").removeClass();
+        $("#display").addClass("bg-success");
+        $("#display").html("enter success");
+      })
+      .catch(function(results){
+        $("#display").removeClass();
+        $("#display").addClass("bg-warning");
+        $("#display").html("enter fail");
+      })
+    }
+    function enterDataCh(){
+      let uTdata = new UTdata();
+      let value = ($("#data").val());
+      uTdata.set(key3, value).set(key,"")
       .save()
       .then(function(results){
         $("#display").removeClass();
