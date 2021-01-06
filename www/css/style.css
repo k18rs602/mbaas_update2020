@@ -1,2 +1,29 @@
 /**/
+body {
+  background-color: rgba(88, 207, 207, 0.079);
+}
+label {
+  display: block;
+  float: left;
+  text-align: right;
+  width: 20%;
+}
+.btn {
+  margin-top: 8px;
+  margin-bottom: 13px;
+  font-size: 10pt;
+  height: 4ex;
+  width: 6em;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 255, 0.286);
+}
 
+table {
+  border-collapse: collapse;
+}
+th, td {
+  border: solid;
+}
+td.num {
+  text-align: right;
+}
