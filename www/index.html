@@ -46,22 +46,30 @@
         $("#display").html("enter fail");
       })
     }
+    /*
     function enterDataCh(){
       let uTdata = new UTdata();
       let value = ($("#data").val());
       uTdata.set(key3, value).set(key,"")
       .save()
-      .then(function(results){
-        $("#display").removeClass();
-        $("#display").addClass("bg-success");
-        $("#display").html("enter success");
-      })
-      .catch(function(results){
-        $("#display").removeClass();
-        $("#display").addClass("bg-warning");
-        $("#display").html("enter fail");
-      })
+      if(id=="#moji"){
+        document.form8.c8[1].checked=false;
+        enterDataMoji();
+      }else{
+        enterDataNumber();
+      }
+//      .then(function(results){
+//        $("#display").removeClass();
+//        $("#display").addClass("bg-success");
+//        $("#display").html("enter success");
+//      })
+//      .catch(function(results){
+//        $("#display").removeClass();
+//        $("#display").addClass("bg-warning");
+//        $("#display").html("enter fail");
+//      })
     }
+    */
     function fetchAll() {
       UTdata.fetchAll()
       .then(function(results){
@@ -179,9 +187,6 @@
       }else{
         document.form8.c8[0].checked=false;
       }
-      if(val=="文字"){
-        
-      }
     }
 
     </script>
@@ -190,8 +195,8 @@
   <h1 class="text-light bg-secondary">mbaas update</h1>
   <div>
     <form name="form8">
-    <input type="checkbox" name="c8" value="文字" onchange="chk1(this.value)">文字
-    <input type="checkbox" name="c8" value="数字" onchange="chk1(this.value)">数字
+    <input type="checkbox" name="c8" id="moji" value="文字" onchange="chk1(this.value)">文字
+    <input type="checkbox" name="c8" id="suji" value="数字" onchange="chk1(this.value)">数字
     </form>
     <p><span id="span8"></span>を選択</p>
   </div>
